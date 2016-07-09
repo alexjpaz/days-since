@@ -1,0 +1,28 @@
+#!/bin/bash
+
+CMD=$1
+shift 1
+ARGS=$@
+
+source .env
+
+build() {
+  webpack
+}
+
+deploy() {
+  docker pull xueshanf/awscli
+  docker run --rm \
+    -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+    -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+    -e AWS_DEFAULT_REGION=us-east-1 \
+    -v $PWD:/app xueshanf/awscli\
+      aws s3 cp \
+        --recursive \
+        --acl public-read \
+        --cache-control max-age=600 \
+        ./public $DEPLOY_S3_PATH
+
+}
+
+$CMD $ARGS

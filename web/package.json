@@ -1,0 +1,23 @@
+{
+  "name": "days-since",
+  "version": "1.0.0",
+  "description": "Track how many days it has been since the last time a generic event has happened (e.g. Alex broke the build).",
+  "main": "daysSinceReset.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexjpaz/days-since.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexjpaz/days-since/issues"
+  },
+  "homepage": "https://github.com/alexjpaz/days-since#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
