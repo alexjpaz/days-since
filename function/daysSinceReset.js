@@ -1,7 +1,7 @@
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
-exports.handler = function(event, context, callback) {
+exports.module = function(event, context, callback) {
     s3.getObject({
       Bucket: 'alexjpaz.com',
       Key: 'days-since/data.json',

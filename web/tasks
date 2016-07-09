@@ -6,6 +6,15 @@ ARGS=$@
 
 source .env
 
+dev() {
+  local WEBPACK=node_modules/webpack/bin/webpack.js
+  local WEBPACK_DEV_SERVER=node_modules/webpack-dev-server/bin/webpack-dev-server.js
+  trap 'kill $(jobs -p)' EXIT
+    $WEBPACK -w &
+    $WEBPACK_DEV_SERVER --hot --inline --host 0.0.0.0 --port 8008 --content-base public/ &
+  wait
+}
+
 build() {
   webpack
 }
