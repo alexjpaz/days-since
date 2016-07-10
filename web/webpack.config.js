@@ -10,15 +10,20 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      riot: 'riot'
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html.ejs'
     })
   ],
   module: {
-    loaders: [{
-      test: /\.html$/,
-      loader: 'mustache?noShortcut'
-    }],
+    preLoaders: [
+     { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader', query: { type: 'none' } }
+    ],
+    loaders: [
+      {test: /\.html$/, loader: 'mustache?noShortcut'}
+    ],
   },
   devServer: {
     contentBase: './public'

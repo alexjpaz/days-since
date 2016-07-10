@@ -1,3 +1,4 @@
+<app>
 <header class='deep-orange white-text z-depth-1'>
   <form class="col s12">
     <div class="row">
@@ -10,7 +11,9 @@
   </form>
 </header>
 <main>
-  {{> test }}
+  <div class='container'>
+    <event-list></event-list>
+  </div>
 </main>
 <style>
     body {
@@ -39,3 +42,4 @@
       margin: 0;
     }
 </style>
+</app>
