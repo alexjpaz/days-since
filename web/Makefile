@@ -1,5 +1,5 @@
 build:
-	./tasks build
+	./tasks dockerBuild
 
 deploy:
 	./tasks deploy

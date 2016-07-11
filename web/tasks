@@ -15,9 +15,13 @@ dev() {
   wait
 }
 
-build() {
-  local WEBPACK=node_modules/webpack/bin/webpack.js
-  WEBPACK -p
+dockerBuild() {
+  local CIDFILE=$(mktemp /tmp/cidfile.XXXXXXXXXX)
+  rm $CIDFILE
+  local DOCKER_IMAGE_TAG=alexjpaz/soundboard-client-web
+  docker build -t $DOCKER_IMAGE_TAG .
+  docker run --cidfile $CIDFILE $DOCKER_IMAGE_TAG echo starting container
+  docker cp $(cat $CIDFILE):/usr/src/app/public ./public
 }
 
 deploy() {
