@@ -9,3 +9,4 @@ deploy:
     script: make deploy
     on:
       repo: alexjpaz/days-since
+      branch: master
