@@ -1,6 +1,6 @@
 require('file?name=[name].[ext]!./manifest.json')
 
-var Store = require('./Store');
+var Store = require('./store');
 
 require('./tags/main.tag');
 require('./tags/event-list.tag');
