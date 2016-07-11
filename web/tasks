@@ -35,7 +35,7 @@ deploy() {
       aws s3 cp \
         --recursive \
         --acl public-read \
-        --cache-control max-age=600 \
+        --cache-control max-age=30 \
         /app/public $DEPLOY_S3_PATH
 
 }
