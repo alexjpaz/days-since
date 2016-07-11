@@ -16,7 +16,8 @@ dev() {
 }
 
 build() {
-  webpack
+  local WEBPACK=node_modules/webpack/bin/webpack.js
+  WEBPACK -p
 }
 
 deploy() {
