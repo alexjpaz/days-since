@@ -12,7 +12,7 @@
 </header>
 <main>
   <div class='container'>
-    <add-event-card></add-event-card>
+    <add-event-card if={store.apiKey}></add-event-card>
     <event-list></event-list>
   </div>
 </main>
