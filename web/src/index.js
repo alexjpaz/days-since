@@ -5,6 +5,7 @@ var Store = require('./store');
 require('./tags/main.tag');
 require('./tags/event-list.tag');
 require('./tags/event-card.tag');
+require('./tags/add-event-card.tag');
 
 riot.mixin('store', {
   store: new Store()

@@ -6,9 +6,9 @@ function Store() {
 
   this.apiKey = localStorage.getItem('daysSince.apiKey');
 
-  this.resetEvent = function(name) {
-    api.resetEvent(name);
-  };
+  this.on('resetEvent', function(eventName, resetDate) {
+    api.resetEvent(eventName, resetDate);
+  });
 
   setInterval(function() {
   }, 100);
@@ -26,6 +26,7 @@ function Store() {
         var events = Object.keys(data.daysSince).map(function(k) {
           return {
             name: k,
+            date: new Date(data.daysSince[k].lastTime),
             days: calculateDays(new Date(data.daysSince[k].lastTime))
           };
         });
