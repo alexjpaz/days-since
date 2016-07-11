@@ -15,6 +15,11 @@
       tag.events = events;
       tag.eventsKeys = Object.keys(events);
       tag.update();
-      });
+    });
+
+    var subRoute = riot.route.create();
+    subRoute("/?name=(.*)", function(d) {
+      console.log(d);
+    });
   </script>
 </event-list>

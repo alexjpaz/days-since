@@ -12,8 +12,12 @@
 </header>
 <main>
   <div class='container'>
-    <add-event-card if={store.apiKey}></add-event-card>
-    <event-list></event-list>
+    <route when='/new'>
+      <add-event-card></add-event-card>
+    </route>
+    <route when='/(\?.*)?'>
+      <event-list></event-list>
+    </route>
   </div>
 </main>
 <style>

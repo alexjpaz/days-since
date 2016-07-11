@@ -9,7 +9,7 @@
       <p>
         <form id='resetForm'>
           <input type="date" class="datepicker" name='date' onchange={setResetDate}>
-          <a class="waves-effect waves-light btn" onclick={resetEvent} href>Reset</a>
+          <a class="waves-effect waves-light btn" onclick={resetEvent} href>Set Date</a>
         </form>
       </p>
     </div>
