@@ -12,6 +12,8 @@ module.exports = {
 
   },
   resetEvent: function(eventName) {
+    apiKey = localStorage.getItem('daysSince.apiKey');
+
     var newDate = new Date();
     newDate.setHours(0,0,0,0);
 

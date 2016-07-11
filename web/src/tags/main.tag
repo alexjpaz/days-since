@@ -42,4 +42,14 @@
       margin: 0;
     }
 </style>
+<script>
+  var tag = this;
+  tag.mixin('store');
+  tag.store.on('foo', function() {
+    console.log('o')
+  });
+
+
+
+</script>
 </app>
