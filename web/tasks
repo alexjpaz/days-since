@@ -36,7 +36,7 @@ deploy() {
         --recursive \
         --acl public-read \
         --cache-control max-age=600 \
-        ./public $DEPLOY_S3_PATH
+        /app/public $DEPLOY_S3_PATH
 
 }
 
