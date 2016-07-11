@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 services:
   - docker
 language: bash
@@ -8,4 +8,4 @@ deploy:
     skip_cleanup: true
     script: make deploy
     on:
-      repo: alexjpaz/soundboard
+      repo: alexjpaz/days-since
