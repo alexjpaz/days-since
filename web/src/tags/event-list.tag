@@ -4,6 +4,7 @@
       <event-card id={events[e].name} name={events[e].name} days={events[e].days} date='{events[e].date}'></event-card>
     </div>
   </div>
+  <a href='#/' class='btn btn-link'>Clear Filters</a>
   <script>
     var tag = this;
 
@@ -23,14 +24,18 @@
       if(!name) {
         return;
       }
-      tag.eventKeys = tag.eventKeys.filter(function(k) {
+      var keys = tag.eventKeys.filter(function(k) {
         return name === tag.events[k].name;
       });
+
+      if(keys.length > 0) {
+        tag.eventKeys = keys;
+      }
     };
 
     var subRoute = riot.route.create();
     subRoute("/..", function(d) {
-      tag.nameFilter = riot.route.query().name;
+      tag.nameFilter = decodeURIComponent(riot.route.query().name);
       tag.filterEvents(tag.nameFilter);
       tag.update();
     });
