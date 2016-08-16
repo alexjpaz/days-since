@@ -15,7 +15,7 @@
     <route when='/new'>
       <add-event-card></add-event-card>
     </route>
-    <route when='/(\?.*)?'>
+    <route when='/..'>
       <event-list></event-list>
     </route>
   </div>

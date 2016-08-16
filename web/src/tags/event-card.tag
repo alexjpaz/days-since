@@ -1,7 +1,9 @@
 <event-card>
   <div class="card" id={opts.name}>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{ opts.name }<i class="material-icons right">more_vert</i></span>
+      <span class="card-title activator grey-text text-darken-4">
+        <a href='#/?name={ opts.name }'>{opts.name}</a>
+        <i class="material-icons right">more_vert</i></span>
       <p class='jumbo'>{ opts.days }</p>
     </div>
     <div class="card-reveal">
